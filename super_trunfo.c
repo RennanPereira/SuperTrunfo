@@ -2,9 +2,10 @@
 
 int main() {
     char Estado[20], Cidade[20], Codigo[10];
-    int Populacao, PontosTuristicos;
-    float Area;
-    double Pib, DensidadeP, PibPerCapita;
+    int PontosTuristicos;
+    float Area, SuperPoder;
+    float Pib, DensidadeP, PibPerCapita;
+    unsigned long int Populacao;
     // Início do jogo Super Trunfo
     printf("Bem-vindo ao jogo Super Trunfo!\n");
     printf("Por favor, insira as informações solicitadas para criar a primeira carta.\n");
@@ -20,7 +21,7 @@ int main() {
     scanf(" %[^\n]", Cidade);
 
     printf("Digite o tamanho da população: ");
-    scanf("%d", &Populacao);
+    scanf("%u", &Populacao);
 
     printf("Digite o número de pontos turísticos: ");
     scanf("%d", &PontosTuristicos);
@@ -29,21 +30,25 @@ int main() {
     scanf("%f", &Area);
 
     printf("Digite o PIB do estado: ");
-    scanf("%lf", &Pib);
+    scanf("%f", &Pib);
 
     //Calcular densidade populacional
-    DensidadeP = (double) Populacao / Area;
+    DensidadeP = Populacao / Area;
 
     //Calcular PIB per Capita
-    PibPerCapita = (double) Pib / Populacao;
+    PibPerCapita = Pib / Populacao;
+
+    //Calcular Super Poder
+    SuperPoder = Populacao + Area + Pib + PontosTuristicos + PibPerCapita - DensidadeP;
 
     // Solicita ao usuário as informações da segunda carta
     printf("\nAgora digite as informações da segunda carta:\n");
 
     char Estado2[20], cidade2[20], Codigo2[10];
-    int Populacao2, PontosTuristicos2;
-    float Area2;
-    double Pib2, DensidadeP2, PibPerCapita2;
+    int PontosTuristicos2;
+    float Area2, SuperPoder2;
+    float Pib2, DensidadeP2, PibPerCapita2;
+    unsigned long int Populacao2;
 
     printf("Digite o estado: ");
     scanf(" %[^\n]", Estado2); 
@@ -55,7 +60,7 @@ int main() {
     scanf(" %[^\n]", cidade2);
 
     printf("Digite o tamanho da população: ");
-    scanf("%d", &Populacao2);
+    scanf("%u", &Populacao2);
 
     printf("Digite o número de pontos turísticos: ");
     scanf("%d", &PontosTuristicos2);
@@ -64,13 +69,17 @@ int main() {
     scanf("%f", &Area2);
 
     printf("Digite o PIB do estado: ");
-    scanf("%lf", &Pib2);
+    scanf("%f", &Pib2);
 
     //Calcular densidade populacional
     DensidadeP2 = (float) Populacao2 / Area2;
 
-       //Calcular PIB per Capita
+    //Calcular PIB per Capita
     PibPerCapita2 = (double) Pib2 / Populacao2;
+
+    //Calcular Super Poder
+    SuperPoder2 = Populacao2 + Area2 + Pib2 + PontosTuristicos2 + PibPerCapita2 - DensidadeP2;
+
 
     // Exibe as informações das cartas
     printf("\nInformações da Primeira Carta:\n");
@@ -83,6 +92,7 @@ int main() {
     printf("Pontos Turísticos: %d\n", PontosTuristicos);
     printf("Densidade Populacional: %.0f hab/km²\n", DensidadeP);
     printf("PIB per Capita: %.2f$ de Reais\n", PibPerCapita);
+    printf("Super Poder: %.2f\n", SuperPoder);
 
     printf("\nInformações da Segunda Carta:\n");
     printf("Estado: %s\n", Estado2);
@@ -94,5 +104,17 @@ int main() {
     printf("Pontos Turísticos: %d\n", PontosTuristicos2);
     printf("Densidade Populacional: %.0f hab/km²\n", DensidadeP2);
     printf("PIB per Capita: %.2f$ de Reais\n", PibPerCapita2);
+    printf("Super Poder: %.2f\n", SuperPoder2);
+
+
+    // Comparações entre as cartas
+    printf("\nComparações entre as cartas:\n");
+    printf("A carta %s vence em pontos turísticos a carta %s? %d\n", Estado, Estado2, PontosTuristicos > PontosTuristicos2);
+    printf("A carta %s vence em população a carta %s? %d\n", Estado, Estado2, Populacao > Populacao2);
+    printf("A carta %s vence em maior área a carta %s? %d\n", Estado, Estado2, Area > Area2);
+    printf("A carta %s vence em PIB maior a carta %s? %d\n", Estado, Estado2, Pib > Pib2);
+    printf("A carta %s vence em densidade populacional menor que a carta %s? %d\n", Estado, Estado2, DensidadeP < DensidadeP2);
+    printf("A carta %s vence em PIB per capita maior a carta %s? %d\n", Estado, Estado2, PibPerCapita > PibPerCapita2);
+    printf("A carta %s vence em super poder maior a carta %s? %d\n", Estado, Estado2, SuperPoder > SuperPoder2);
 
 }
