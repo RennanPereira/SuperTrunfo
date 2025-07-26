@@ -11,6 +11,10 @@ Criar duas cartas para o jogo super trunfo, as cartas devem conter as seguintes 
  
 [x] O programa deve exibir os dados de cada carta na tela, formatados de forma clara e organizada.
 
+[x] Manter as funcionalidades do nível básico (leitura e exibição dos dados das cartas).
+ 
+[x] Calcular e exibir corretamente a densidade populacional e o PIB per capita para cada cidade.
+
 ## Requisitos não funcionais
 
 
@@ -19,3 +23,7 @@ Criar duas cartas para o jogo super trunfo, as cartas devem conter as seguintes 
 [x] Legibilidade: O código deve ser bem indentado, com comentários explicativos e nomes de variáveis significativos, facilitando a leitura e compreensão.
  
 [x] Corretude: O programa deve funcionar corretamente, sem erros de compilação ou execução.
+
+[x] Manter os requisitos não funcionais do nível básico (usabilidade, legibilidade, corretude).
+
+[x] Eficiência: O programa deve realizar os cálculos de forma eficiente.
