@@ -4,43 +4,37 @@ Criar duas cartas para o jogo super trunfo, as cartas devem conter as seguintes 
 
 ## Requisitos funcionais
 
-- Nivel Novato
-  
-[x] O programa deve ler corretamente os dados de duas cartas do usuário via entrada padrão (teclado).
+[x] Escolha de Dois Atributos: O sistema deve permitir que o jogador escolha dois atributos numéricos diferentes para a comparação das cartas, através de menus interativos. Implemente a lógica necessária para garantir que o jogador não possa selecionar o mesmo atributo duas vezes.
  
-[x] O programa deve armazenar os dados lidos em variáveis apropriadas.
+[x] Comparação com Múltiplos Atributos: Implemente a lógica para comparar as duas cartas com base nos dois atributos escolhidos. Para cada atributo, a regra geral é: vence a carta com o maior valor. A exceção continua sendo a Densidade Demográfica, onde vence a carta com o menor valor.
  
-[x] O programa deve exibir os dados de cada carta na tela, formatados de forma clara e organizada.
-
-- Nivel intermediário
-  
-[x] Manter as funcionalidades do nível básico (leitura e exibição dos dados das cartas).
+[x] Soma dos Atributos: Após comparar os dois atributos individualmente, o sistema deve somar os valores dos atributos para cada carta. A carta com a maior soma vence a rodada.
  
-[x] Calcular e exibir corretamente a densidade populacional e o PIB per capita para cada cidade.
-
-- Nivel Mestre
-  
-[x] Manter as funcionalidades dos níveis básico e intermediário (leitura, cálculo e exibição dos dados das cartas, incluindo densidade populacional e PIB per capita).
+[x] Tratamento de Empates: Implemente a lógica para tratar empates. Se a soma dos atributos das duas cartas for igual, exiba a mensagem "Empate!".
  
-[x] Calcular corretamente o Super Poder para cada carta.
+[x] Menus Dinâmicos: Crie menus interativos e dinâmicos usando switch. "Dinâmicos" significa que, por exemplo, após o jogador escolher o primeiro atributo, esse atributo não deve mais aparecer como opção para a escolha do segundo atributo.
  
-[x] Comparar corretamente as cartas atributo por atributo, considerando a regra específica para densidade populacional.
+[x] Exibição Clara do Resultado: Mostre o resultado da comparação de forma clara e organizada, incluindo:
  
-[x] Exibir os resultados das comparações de forma clara e organizada.
+O nome dos dois países.
+ 
+Os dois atributos usados na comparação.
+ 
+Os valores de cada atributo para cada carta.
+ 
+A soma dos atributos para cada carta.
+ 
+Qual carta venceu (ou se houve empate).
 
 ## Requisitos não funcionais
 
-- Nivel Novato
-  
-[x] Usabilidade: O programa deve ser fácil de usar, com instruções claras para o usuário.
+[x] Usabilidade: A interface do usuário deve ser intuitiva e fácil de navegar, com mensagens claras e instruções para cada etapa.
  
-[x] Legibilidade: O código deve ser bem indentado, com comentários explicativos e nomes de variáveis significativos, facilitando a leitura e compreensão.
+[x] Performance: O sistema deve executar as comparações e exibir os resultados rapidamente.
  
-[x] Corretude: O programa deve funcionar corretamente, sem erros de compilação ou execução.
-
-- Nivel Intermediário
-  
-[x] Manter os requisitos não funcionais do nível básico (usabilidade, legibilidade, corretude).
+[x] Manutenibilidade: Escreva um código bem estruturado, organizado, com indentação consistente e comentários explicativos. Use nomes de variáveis descritivos.
+ 
+[x] Confiabilidade: O sistema deve ser robusto e lidar com entradas inválidas do usuário de forma adequada, exibindo mensagens de erro apropriadas e evitando travamentos. Utilize o default no switch para tratar opções inválidas.
 
 [x] Eficiência: O programa deve realizar os cálculos de forma eficiente.
 
