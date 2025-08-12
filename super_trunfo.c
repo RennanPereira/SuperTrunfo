@@ -1,22 +1,9 @@
-#include <math.h>
-// Função para retornar o valor do atributo selecionado
-float getAtributo(int codigo, int PontosTuristicos, unsigned long Populacao, float Area, float Pib, float DensidadeP, float PibPerCapita, float SuperPoder) {
-    switch (codigo) {
-        case 1: return (float)Populacao;
-        case 2: return (float)PontosTuristicos;
-        case 3: return Area;
-        case 4: return Pib;
-        case 5: return DensidadeP;
-        case 6: return PibPerCapita;
-        case 7: return SuperPoder;
-        default: return 0;
-    }
-}
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
 int main() {
+    //Declaração de variaveis da primeira carta
     char Estado[20], Cidade[20], Codigo[10];
     int PontosTuristicos = 150, Atributo1, Atributo2;
     float Area = 1500.00, SuperPoder, Soma;
@@ -26,8 +13,8 @@ int main() {
     strcpy(Estado, "Ceará");
     strcpy(Cidade, "Fortaleza");
     strcpy(Codigo, "CE123");
-    //Calcular densidade populacional
 
+    //Calcular densidade populacional
     DensidadeP = Populacao / Area;
 
     //Calcular PIB per Capita
@@ -36,7 +23,7 @@ int main() {
     //Calcular Super Poder
     SuperPoder = Populacao + Area + Pib + PontosTuristicos + PibPerCapita - DensidadeP;
 
-
+    //Declaração de variaveis da segunda carta
     char Estado2[20], cidade2[20], Codigo2[10];
     int PontosTuristicos2 = 150;
     float Area2 = 1500.00, SuperPoder2;
@@ -56,6 +43,7 @@ int main() {
     //Calcular Super Poder
     SuperPoder2 = Populacao2 + Area2 + Pib2 + PontosTuristicos2 + PibPerCapita2 - DensidadeP2;
 
+    //Inicialização do jogo
     printf("Bem-vindo ao jogo Super Trunfo!\n");
     printf("Você vai selecionar dois atributos para comparar entre as cartas!\n");
     printf("1. População\n");
@@ -68,6 +56,12 @@ int main() {
     printf("Selecione o primeiro atributo para comparar as cartas: (1 - 7)\n");
     scanf("%d", &Atributo1);
 
+    //Teste de números invalidos
+    if(Atributo1 > 7) {
+        printf("Número inválido, tente novamente");
+        return 0;
+    }
+
     printf("1. População\n");
     printf("2. Pontos Turísticos\n");
     printf("3. Área\n");
@@ -78,12 +72,19 @@ int main() {
     printf("Selecione o segundo atributo para comparar as cartas: (1 - 7)\n");
     scanf("%d", &Atributo2);
 
+    //Teste de números invalidos
+    if(Atributo2 > 7) {
+        printf("Número inválido, tente novamente");
+        return 0;
+    }
+
     // teste para não permitir a escolha do mesmo atributo
     if (Atributo1 == Atributo2) {
     printf("Você escolheu os mesmos atributos, tente de novo.\n");
     return 0; // ou exit(0);
     } 
 
+    //Comparações
     printf("\nPrimeira disputa de atributos:\n");
     switch (Atributo1)
     {
@@ -270,9 +271,8 @@ int main() {
         break;
     }
 
+    //switch's de cálculo da soma de atributos
     float Soma1 = 0, Soma2 = 0;
-
-// Para o primeiro atributo
 switch (Atributo1) {
     case 1: Soma1 += Populacao;      Soma2 += Populacao2; break;
     case 2: Soma1 += PontosTuristicos; Soma2 += PontosTuristicos2; break;
