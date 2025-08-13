@@ -5,7 +5,7 @@
 int main() {
     //Declaração de variaveis da primeira carta
     char Estado[20], Cidade[20], Codigo[10];
-    int PontosTuristicos = 150, Atributo1, Atributo2;
+    int PontosTuristicos = 250, Atributo1, Atributo2;
     float Area = 1500.00, SuperPoder, Soma;
     float Pib = 20000000, DensidadeP, PibPerCapita;
     unsigned long int Populacao = 300000;
@@ -305,4 +305,5 @@ if (Soma1 > Soma2) {
     printf("\nAs duas cartas possuem a mesma soma de atributos. Empate!\n");
 }
     printf("\nObrigado por jogar Super Trunfo!\n");
+    return 0;
 }
