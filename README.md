@@ -1,7 +1,8 @@
 # SuperTrunfo
-Desafio nivel Mestre feito para faculdade Estacio.
-Criar duas cartas para o jogo super trunfo, as cartas devem conter as seguintes informações: estado, código, cidade, população, número de pontos turisticos, área em km2, Pib, Pib per capita, super poder e densidade populacional.
+Trabalho do primeiro semestre da faculdade Estacio!
 
+desafio final do Super Trunfo!
+Você permitirá que o jogador escolha dois atributos para comparar as cartas de países, implementará menus dinâmicos com switch e usará o operador ternário para tornar seu código mais elegante. Este desafio é a culminação dos desafios anteriores, onde você cadastrou as cartas e implementou a comparação com um único atributo.
 
 ## Requisitos funcionais
 
